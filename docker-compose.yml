@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  client:
+    build: ./logins-client/client
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_URL=http://api:8000
+    depends_on:
+      - api
+
+  api:
+    build: ./logins-api/api
+    ports:
+      - "8000:8000"
+    environment:
+      - CLIENT_URL=http://client 
