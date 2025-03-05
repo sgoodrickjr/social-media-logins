@@ -1,8 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/logins-api/$1" },
-    { "source": "/(.*)", "destination": "/logins-client/index.html" }
-  ],
+ 
   "builds": [
     {
       "src": "logins-api/index.ts",

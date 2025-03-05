@@ -1,0 +1,19 @@
+{
+  "name": "social-media-logins",
+  "version": "1.0.0",
+  "description": "A secure authentication service supporting Google and Facebook login.",
+  "main": "index.js",
+  "private": true,
+  "workspaces": ["logins-client/client", "logins-api/api"],
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "npm run start --workspace=logins-api/api",
+    "build": "npm run build --workspace=logins-client/client && npm run build --workspace=logins-api/api",
+    "dev": "npm run dev --workspace=logins-client/client & npm run dev --workspace=logins-api/api"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
