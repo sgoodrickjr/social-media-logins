@@ -1,8 +1,22 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/api/(.*)", "destination": "/logins-api/$1" },
+    { "source": "/(.*)", "destination": "/logins-client/index.html" }
+  ],
+  "builds": [
+    {
+      "src": "logins-api/index.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "logins-client/package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "logins-api/index.ts" }
   ],
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "framework": "vite"
-} 
+}
